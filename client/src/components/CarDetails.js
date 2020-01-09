@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Input from './Input';
-import ListTodo from './ListTodo';
+import Input from './EditCar';
+import ListTodo from './ListCar';
 
 class Todo extends Component {
 

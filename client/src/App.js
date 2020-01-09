@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -8,29 +8,30 @@ import Contact from './components/Contact';
 import Admin from './components/Admin';
 import Login from './components/Login';
 import Footer from './components/Footer';
-import Todo from './components/Todo';
+import Todo from './components/CarDetails';
+import BuildCar from './components/BuildCar';
 
-function App() {
-  return (
-    <div className="container-fluid">
-      <Header />
-      <br></br>
-      <Router>
-        <div className="views">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/admin" component={Admin} />
-            <Route path="/login" component={Login} />
-            <Route render={() => <h1>404 Error</h1>} />
-          </Switch>
-        </div>
-      </Router>
-      <br></br>
-      <Footer />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="container-fluid">
+        <Header />
+        <br/>
+        <br/>
+        <Router>
+          <div>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/admin' component={Admin} />
+            <Route path='/login' component={Login} />
+          </div>
+        </Router>
+        <br/>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
