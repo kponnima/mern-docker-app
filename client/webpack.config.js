@@ -31,6 +31,16 @@ module.exports = {
             {
                 test: /.(css|scss)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|ico)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'images/[name]-[hash].[ext]'
+                    }
+                }
+                ]
             }
         ]
     },
@@ -44,12 +54,18 @@ module.exports = {
             chunkFilename: '[id].css'
         }),
         new webpack.DefinePlugin({
-            'process.env.BROWSER': false,
-            __DEV__: process.env.NODE_ENV !== 'production',
+            'process.env.BROWSER': false
         })
     ],
+    devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
     devServer: {
+        port: process.env.PORT || 8080, // port webpack-dev-server listens to, defaults to 8080
+        overlay: { // Shows a full-screen overlay in the browser when there are compiler errors or warnings
+            warnings: true, // default false
+            errors: true, //default false
+        },
         historyApiFallback: true,
-        contentBase: path.join(__dirname, 'src')
+        contentBase: path.join(__dirname, 'src'),
+        watchContentBase: true
     }
 };

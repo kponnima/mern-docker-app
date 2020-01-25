@@ -8,11 +8,11 @@ class BuildCar extends Component {
     super();
     this.state = {
       title: '',
-      isbn:'',
-      author:'',
-      description:'',
-      published_date:'',
-      publisher:''
+      isbn: '',
+      author: '',
+      description: '',
+      published_date: '',
+      publisher: ''
     };
   }
 
@@ -37,11 +37,11 @@ class BuildCar extends Component {
       .then(res => {
         this.setState({
           title: '',
-          isbn:'',
-          author:'',
-          description:'',
-          published_date:'',
-          publisher:''
+          isbn: '',
+          author: '',
+          description: '',
+          published_date: '',
+          publisher: ''
         })
         this.props.history.push('/');
       })
@@ -52,96 +52,129 @@ class BuildCar extends Component {
 
   render() {
     return (
-      <div className="CreateBook">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
-                  Show BooK List
-              </Link>
-            </div>
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Book</h1>
-              <p className="lead text-center">
-                  Create new book
-              </p>
+      <div>
 
-              <form noValidate onSubmit={this.onSubmit}>
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='Title of the Book'
-                    name='title'
-                    className='form-control'
-                    value={this.state.title}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <br />
-
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='ISBN'
-                    name='isbn'
-                    className='form-control'
-                    value={this.state.isbn}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='Author'
-                    name='author'
-                    className='form-control'
-                    value={this.state.author}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='Describe this book'
-                    name='description'
-                    className='form-control'
-                    value={this.state.description}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className='form-group'>
-                  <input
-                    type='date'
-                    placeholder='published_date'
-                    name='published_date'
-                    className='form-control'
-                    value={this.state.published_date}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='Publisher of this Book'
-                    name='publisher'
-                    className='form-control'
-                    value={this.state.publisher}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <input
-                    type="submit"
-                    className="btn btn-outline-warning btn-block mt-4"
-                />
-              </form>
+        <div className="row">
+          <div className="col m-auto">
+            <h4>Build & Price</h4>
+            <h5>Select A Vehicle</h5>
           </div>
+          <div className="col m-auto">
+            <div className="dropdown float-right">
+              <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SORT BY
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="#">Category</a>
+                <a className="dropdown-item" href="#">MSRP</a>
+                <a className="dropdown-item" href="#">Seating</a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col m-auto">
+            <ul className="nav justify-content-center">
+              <li className="nav-item">
+                <a className="nav-link active" href="#">CARS</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">SUVS & CROSSOVERS</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">MINIVAN & TRUCK</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">ELECTRIC</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row row-cols-1 row-cols-md-3">
+          <div className="col mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title text-center">2020 Insight</h5>
+                <div className="row">
+                  <div className="col m-auto">
+                    <h4>$22,930</h4>
+                    <h5>Starting MSRP*</h5>
+                  </div>
+                  <div className="col m-auto text-right">
+                    <h4>49/55</h4>
+                    <h5>Hwy/City*</h5>
+                  </div>
+                </div>
+                {/* <button type="button" class="btn btn-primary" onClick={this.handleClick}>GO</button> */}
+                <Link to="/build-and-price-result" className="btn btn-primary">BUILD</Link>
+              </div>
+            </div>
+          </div>
+          <div className="col mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title text-center">2020 Civic Sedan</h5>
+                <div className="row">
+                  <div className="col m-auto">
+                    <h4>$22,930</h4>
+                    <h5>Starting MSRP*</h5>
+                  </div>
+                  <div className="col m-auto text-right">
+                    <h4>49/55</h4>
+                    <h5>Hwy/City*</h5>
+                  </div>
+                </div>
+                {/* <button type="button" class="btn btn-primary" onClick={this.handleClick}>GO</button> */}
+                <Link to="/buildcar" className="btn btn-primary">BUILD</Link>
+              </div>
+            </div>
+          </div>
+          <div className="col mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title text-center">2020 Accord</h5>
+                <div className="row">
+                  <div className="col m-auto">
+                    <h4>$22,930</h4>
+                    <h5>Starting MSRP*</h5>
+                  </div>
+                  <div className="col m-auto text-right">
+                    <h4>49/55</h4>
+                    <h5>Hwy/City*</h5>
+                  </div>
+                </div>
+                {/* <button type="button" class="btn btn-primary" onClick={this.handleClick}>GO</button> */}
+                <Link to="/buildcar" className="btn btn-primary">BUILD</Link>
+              </div>
+            </div>
+          </div>
+          <div className="col mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">2019 Clarity</h5>
+                <div className="row">
+                  <div className="col m-auto">
+                    <h4>$22,930</h4>
+                    <h5>Starting MSRP*</h5>
+                  </div>
+                  <div className="col m-auto text-right">
+                    <h4>49/55</h4>
+                    <h5>Hwy/City*</h5>
+                  </div>
+                </div>
+                {/* <button type="button" class="btn btn-primary" onClick={this.handleClick}>GO</button> */}
+                <Link to="/buildcar" className="btn btn-primary">BUILD</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }

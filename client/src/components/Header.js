@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -11,28 +11,26 @@ class Header extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
-                        <Router>
-                            <div className="links">
+                        {/* <div>
                                 <NavLink exact to="/" className="link" activeClassName="active">Home</NavLink>
                                 <NavLink to="/about" className="link">About</NavLink>
                                 <NavLink to="/contact" className="link">Contact Us</NavLink>
                                 <NavLink to="/admin" className="link">Admin</NavLink>
-                            </div>
-                            {/* <ul className="navbar-nav mr-auto">
-                                <li className="nav-item active">
-                                    <Link to="/" className="link">Home</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/about" className="link">About</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/contact" className="link">Contact Us</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/admin" className="link">Admin</Link>
-                                </li>
-                            </ul> */}
-                        </Router>
+                            </div> */}
+                        <ul className="navbar-nav mr-auto">
+                            <li className="nav-item active">
+                                <Link to="/" className="link">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/about" className="link">About</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/contact" className="link">Contact Us</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/admin" className="link">Admin</Link>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </header>
