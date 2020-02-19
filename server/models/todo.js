@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 //create schema for todo
 const TodoSchema = new Schema({
@@ -7,9 +7,7 @@ const TodoSchema = new Schema({
     type: String,
     required: [true, 'The todo text field is required']
   }
-})
+});
 
 //create model for todo
-const Todo = mongoose.model('todo', TodoSchema);
-
-module.exports = Todo;
+export default mongoose.model('Todo', TodoSchema);

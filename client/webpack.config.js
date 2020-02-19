@@ -59,7 +59,7 @@ module.exports = {
     ],
     devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
     devServer: {
-        port: process.env.PORT || 8080, // port webpack-dev-server listens to, defaults to 8080
+        port: process.env.PORT || 3000, // port webpack-dev-server listens to, defaults to 8080
         overlay: { // Shows a full-screen overlay in the browser when there are compiler errors or warnings
             warnings: true, // default false
             errors: true, //default false

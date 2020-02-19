@@ -1,6 +1,7 @@
-const express = require ('express');
-const router = express.Router();
-const Todo = require('../models/todo');
+import express from 'express';
+let router = express.Router();
+import Todo from '../models/todo';
+
 
 router.get('/todos', (req, res, next) => {
 
@@ -26,6 +27,6 @@ router.delete('/todos/:id', (req, res, next) => {
   Todo.findOneAndDelete({"_id": req.params.id})
     .then(data => res.json(data))
     .catch(next)
-})
+});
 
-module.exports = router;
+export default router;
